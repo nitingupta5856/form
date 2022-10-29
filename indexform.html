@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form  style="border: 1px solid black; width:500px; margin-right: 500px; margin: auto;" onsubmit="onsubmitbtn(event)">
+        <h3 style="color: red; text-align: center;">Book a Call</h3>
+        <p style=" text-align: center;">Book a call slot and our representative  you within 1hr of selected time</p>
+        <hr style="margin:5px ;">
+    <label style="margin: 5px;" >Name:</label>
+    <br>
+    <input type="text" name="username"  style="width: 480px; height: 25px; margin: 5px;" required>
+    <br>
+    <label for="email" style="margin: 5px;">Email:</label>
+    <br>
+    <input type="email" name="email"  style="width: 480px; height: 25px; margin: 5px;" required>
+    <br>
+    <label for="phone" style="margin: 5px;">Phone:</label>
+    <br>
+    <input type="number" name="phone"  style="width: 480px; height: 25px; margin: 5px;" >
+    <br>
+  
+    
+    <br><br>
+   <button style="width: 490px; background-color: orange;border: none; height: 25px; margin: 5px; border-radius: 5%;" >GET A CALL</button>
+</form>
+<script>
+    function onsubmitbtn(event){
+    event.preventDefault();
+    const name=event.target.username.value;
+    const email=event.target.email.value;
+    const phone=event.target.phone.value;
+    localStorage.setItem('name',name);
+    localStorage.setItem('email',email);
+    localStorage.setItem('phone',phone);
+    console.log(event)
+   
+    }
+</script>
+
+</body>
+</html>
