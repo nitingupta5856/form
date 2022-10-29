@@ -34,10 +34,17 @@
     const name=event.target.username.value;
     const email=event.target.email.value;
     const phone=event.target.phone.value;
-    localStorage.setItem('name',name);
-    localStorage.setItem('email',email);
-    localStorage.setItem('phone',phone);
-    console.log(event)
+    // localStorage.setItem('name',name);
+    // localStorage.setItem('email',email);
+    // localStorage.setItem('phone',phone);
+    // console.log(event)
+    const obj={
+        name,
+        email,
+        phone
+    }
+    localStorage.setItem ('userdetails',JSON.stringify(obj))
+    localStorage.getItem ('userdetails',JSON.stringify(obj))
    
     }
 </script>
