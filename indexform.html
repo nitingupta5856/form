@@ -28,6 +28,7 @@
     <br><br>
    <button style="width: 490px; background-color: orange;border: none; height: 25px; margin: 5px; border-radius: 5%;" >GET A CALL</button>
 </form>
+<ul id="parentnode"></ul>
 <script>
     function onsubmitbtn(event){
     event.preventDefault();
@@ -43,9 +44,17 @@
         email,
         phone
     }
-    localStorage.setItem ('userdetails',JSON.stringify(obj))
-    localStorage.getItem ('userdetails',JSON.stringify(obj))
+    // localStorage.setItem ('userdetails',JSON.stringify(obj))
+    localStorage.setItem (obj.email,JSON.stringify(obj));
+    console.log(JSON.parse(localStorage.getItem(obj.email)))
+    showNewUser(obj);
+
    
+    }
+    function showNewUser(user){
+const parentnode=document.getElementById('parentnode');
+const childnode =`<li>${user.name}  - ${user.email}</li>`
+parentnode.innerHTML=parentnode.innerHTML+childnode;
     }
 </script>
 
